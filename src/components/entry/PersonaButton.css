@@ -1,0 +1,59 @@
+.p-btn {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 1.1rem 1.25rem;
+  cursor: pointer;
+  text-align: left;
+  position: relative;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.p-btn::before {
+  content: '';
+  position: absolute;
+  top: -1px; left: -1px;
+  width: 10px; height: 10px;
+  border-top: 1px solid var(--cyan);
+  border-left: 1px solid var(--cyan);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.p-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; right: -1px;
+  width: 10px; height: 10px;
+  border-bottom: 1px solid var(--cyan);
+  border-right: 1px solid var(--cyan);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.p-btn:hover {
+  background: rgba(34,211,238,0.05);
+  border-color: rgba(34,211,238,0.22);
+}
+
+.p-btn:hover::before,
+.p-btn:hover::after {
+  opacity: 1;
+}
+
+.p-btn-role {
+  display: block;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  color: var(--cyan);
+  margin-bottom: 5px;
+}
+
+.p-btn-label {
+  display: block;
+  font-family: var(--disp);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--white);
+}
