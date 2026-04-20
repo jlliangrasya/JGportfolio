@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import SwitchButton from '../../shared/SwitchButton.jsx'
-import { STARS, CONSTELLATION_LINES, BASE_SYSTEM_PROMPT, PERSONAL } from '../../../data/index.js'
+import { STARS, CONSTELLATION_LINES, BASE_SYSTEM_PROMPT, FULL_STORY_CONTEXT, GENERAL_SUGGESTIONS, PERSONAL } from '../../../data/index.js'
 
 /* ─── NOTE ─────────────────────────────────────────────────────────
    Constellation experience with Anthropic API live chat.
@@ -91,19 +91,14 @@ export default function CuriousPersona({ onSwitch }) {
       root.querySelector('#m-body').innerHTML = s.body
       root.querySelector('#m-tags').innerHTML = s.tags.map(t => `<span class="cm-tag">${t}</span>`).join('')
 
-      chatHist = []
-      root.querySelector('#chat-msgs').innerHTML = ''
-      root.querySelector('#chat-sugs').innerHTML = ''
-      root.querySelector('#chat-inp').disabled = false
-      root.querySelector('#chat-sbtn').disabled = false
-
       root.querySelector('#cov').classList.add('show')
       setTimeout(() => modal.classList.add('open'), 80)
       root.querySelector('#bubble-btn').classList.add('active')
       root.querySelector('#intro').classList.add('gone')
 
+      // Add a focus message to the chat (don't reset — preserves ongoing conversation)
       setTimeout(() => {
-        addMsg('host', 'HOST', `You're exploring Jillian's <strong style="color:${s.color}">${s.label}</strong> moment. Ask her anything.`)
+        addMsg('host', 'HOST', `Now exploring Jillian's <strong style="color:${s.color}">${s.label}</strong> moment. Ask about it — or anything else.`)
         setSugs(s.sugs.slice(0, 3))
       }, 200)
     }
@@ -117,6 +112,8 @@ export default function CuriousPersona({ onSwitch }) {
       CONSTELLATION_LINES.forEach(([a, b]) => {
         root.querySelector(`#cl-${a}-${b}`)?.classList.remove('lit')
       })
+      // Clear star focus so subsequent answers aren't biased toward the closed star
+      active = null
     }
 
     /* — CHAT — */
@@ -127,10 +124,8 @@ export default function CuriousPersona({ onSwitch }) {
       if (chatOpen && !active) {
         const msgs = root.querySelector('#chat-msgs')
         if (!msgs.children.length) {
-          const d = document.createElement('div')
-          d.className = 'cno-star'
-          d.textContent = 'CLICK ANY STAR ON THE MAP TO START A CONVERSATION WITH JILLIAN'
-          msgs.appendChild(d)
+          addMsg('host', 'HOST', "Hey — ask me anything. About a project, a moment, or just who I am. Or click any star to dive into that moment.")
+          setSugs(GENERAL_SUGGESTIONS.sort(() => Math.random() - .5).slice(0, 3))
         }
       }
       if (chatOpen) setTimeout(() => root.querySelector('#chat-inp')?.focus(), 200)
@@ -172,7 +167,7 @@ export default function CuriousPersona({ onSwitch }) {
     async function sendMsg() {
       const inp = root.querySelector('#chat-inp')
       const text = inp?.value.trim()
-      if (!text || busy || !active) return
+      if (!text || busy) return
       inp.value = ''; busy = true
       const sbtn = root.querySelector('#chat-sbtn')
       if (sbtn) sbtn.disabled = true
@@ -184,21 +179,28 @@ export default function CuriousPersona({ onSwitch }) {
       chatHist.push({ role: 'user', content: text })
       addTyping()
 
-      const s = STARS[active]
-      const sys = `${BASE_SYSTEM_PROMPT}\n\nThe visitor is asking about your "${s.label}" moment.\n\nContext:\n${s.ctx}`
+      // Build system prompt: always include full story; if a star is clicked, focus on it
+      const s = active ? STARS[active] : null
+      const focus = s
+        ? `\n\nThe visitor just opened your "${s.label}" moment — lean into that if their question is about it, but answer anything they ask.`
+        : ''
+      const sys = `${BASE_SYSTEM_PROMPT}\n\n=== YOUR FULL STORY (reference this to answer any question) ===\n${FULL_STORY_CONTEXT}${focus}`
 
       try {
-        const res = await fetch('https://api.anthropic.com/v1/messages', {
+        const res = await fetch('/api/chat', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 280, system: sys, messages: chatHist })
+          body: JSON.stringify({ system: sys, messages: chatHist, maxTokens: 280 })
         })
         const data = await res.json()
-        const reply = data.content?.[0]?.text || 'Something went wrong — try again!'
+        const reply = data.reply || 'Something went wrong — try again!'
         root.querySelector('#ctyping')?.remove()
         addMsg('jill', 'JILLIAN', reply)
         chatHist.push({ role: 'assistant', content: reply })
-        const pool = s.sugs.filter(q => !chatHist.some(m => m.content === q))
+
+        // Suggestions: prefer the active star's follow-ups, fall back to general ones
+        const pool = (s ? [...s.sugs, ...GENERAL_SUGGESTIONS] : GENERAL_SUGGESTIONS)
+          .filter(q => !chatHist.some(m => m.content === q))
         setSugs(pool.sort(() => Math.random() - .5).slice(0, 3))
       } catch {
         root.querySelector('#ctyping')?.remove()
@@ -227,7 +229,7 @@ export default function CuriousPersona({ onSwitch }) {
       })
     }
 
-    setTimeout(() => root.querySelector('#intro').classList.add('loaded'), 150)
+    setTimeout(() => root.querySelector('#intro')?.classList.add('loaded'), 150)
 
     return () => {
       document.removeEventListener('keydown', onKey)
@@ -293,8 +295,8 @@ function buildHTML() {
     <div id="chat-msgs"></div>
     <div id="chat-sugs"></div>
     <div class="cp-irow">
-      <input id="chat-inp" type="text" placeholder="Ask about this moment..." autocomplete="off" disabled/>
-      <button id="chat-sbtn" onclick="window._curiousSendMsg()" disabled>↑</button>
+      <input id="chat-inp" type="text" placeholder="Ask Jillian anything..." autocomplete="off"/>
+      <button id="chat-sbtn" onclick="window._curiousSendMsg()">↑</button>
     </div>
   </div>
   <button id="bubble-btn" onclick="window._curiousToggleChat()">

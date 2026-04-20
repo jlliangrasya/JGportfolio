@@ -515,6 +515,8 @@ function buildHTML() {
 /* ── SCOPED CSS ── */
 const RPG_CSS = `
 .rpg-root{position:fixed;inset:0;background:#06090f;font-family:'JetBrains Mono',monospace;overflow:hidden}
+.rpg-root ~ .switch-persona-btn{bottom:4.2rem !important;right:1rem !important}
+@media(max-width:480px){.rpg-root ~ .switch-persona-btn{bottom:3.6rem !important;right:.7rem !important}}
 .rpg-bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(245,158,11,.016) 1px,transparent 1px),linear-gradient(90deg,rgba(245,158,11,.016) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
 .rpg-vignette{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,transparent 35%,rgba(0,0,0,.65) 100%);pointer-events:none}
 #rpg-topbar{position:absolute;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:.7rem 2rem;background:rgba(6,9,15,.92);border-bottom:1px solid rgba(255,255,255,.07);font-size:10px;letter-spacing:.1em}
