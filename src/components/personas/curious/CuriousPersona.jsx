@@ -57,7 +57,7 @@ export default function CuriousPersona({ onSwitch }) {
       const line = document.createElementNS('http://www.w3.org/2000/svg', 'line')
       line.setAttribute('x1', sa.pos.x + '%'); line.setAttribute('y1', sa.pos.y + '%')
       line.setAttribute('x2', sb.pos.x + '%'); line.setAttribute('y2', sb.pos.y + '%')
-      line.className = 'cline'; line.id = `cl-${a}-${b}`
+      line.setAttribute('class', 'cline'); line.id = `cl-${a}-${b}`
       svg.appendChild(line)
       setTimeout(() => line.classList.add('drawn'), 500 + i * 110)
     })
