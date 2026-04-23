@@ -1,2 +1,6 @@
 # Local Netlify folder
 .netlify
+
+# Local env (contains API keys — never commit)
+.env.local
+.env*.local
