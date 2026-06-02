@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import SwitchButton from '../../shared/SwitchButton.jsx'
+import JGLogo from '../../shared/JGLogo.jsx'
 import { STATS, SKILL_BRANCHES, QUESTS, ACHIEVEMENTS, ROLE_MSGS } from '../../../data/index.js'
 
 /* ─── NOTE TO DEVELOPER ────────────────────────────────────────────
@@ -349,6 +350,7 @@ export default function RecruiterPersona({ onSwitch }) {
     <>
       <style>{RPG_CSS}</style>
       <div ref={rootRef} className="rpg-root" />
+      <JGLogo onSwitch={onSwitch} />
       <SwitchButton onSwitch={onSwitch} />
     </>
   )

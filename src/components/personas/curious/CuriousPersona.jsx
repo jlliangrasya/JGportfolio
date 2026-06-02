@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import SwitchButton from '../../shared/SwitchButton.jsx'
+import JGLogo from '../../shared/JGLogo.jsx'
 import { STARS, CONSTELLATION_LINES, BASE_SYSTEM_PROMPT, FULL_STORY_CONTEXT, GENERAL_SUGGESTIONS, PERSONAL } from '../../../data/index.js'
 
 /* ─── NOTE ─────────────────────────────────────────────────────────
@@ -57,7 +58,7 @@ export default function CuriousPersona({ onSwitch }) {
       const line = document.createElementNS('http://www.w3.org/2000/svg', 'line')
       line.setAttribute('x1', sa.pos.x + '%'); line.setAttribute('y1', sa.pos.y + '%')
       line.setAttribute('x2', sb.pos.x + '%'); line.setAttribute('y2', sb.pos.y + '%')
-      line.className = 'cline'; line.id = `cl-${a}-${b}`
+      line.setAttribute('class', 'cline'); line.id = `cl-${a}-${b}`
       svg.appendChild(line)
       setTimeout(() => line.classList.add('drawn'), 500 + i * 110)
     })
@@ -246,6 +247,7 @@ export default function CuriousPersona({ onSwitch }) {
     <>
       <style>{CURIOUS_CSS}</style>
       <div ref={rootRef} className="curious-root" />
+      <JGLogo onSwitch={onSwitch} />
       <SwitchButton onSwitch={onSwitch} />
     </>
   )

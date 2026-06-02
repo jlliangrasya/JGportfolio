@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import SwitchButton from '../../shared/SwitchButton.jsx'
+import JGLogo from '../../shared/JGLogo.jsx'
 import {
   BOOT_LINES, GIT_LOG, STORY_LINES, PERSONAL,
   SKILL_BRANCHES, QUESTS, ACHIEVEMENTS
@@ -356,6 +357,7 @@ export default function CollaboratorPersona({ onSwitch }) {
     <>
       <style>{TERM_CSS}</style>
       <div ref={rootRef} className="term-root" />
+      <JGLogo onSwitch={onSwitch} />
       <SwitchButton onSwitch={onSwitch} />
     </>
   )
