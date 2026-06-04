@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import SwitchButton from '../../shared/SwitchButton.jsx'
+import JGLogo from '../../shared/JGLogo.jsx'
 import { STATS, SKILL_BRANCHES, QUESTS, ACHIEVEMENTS, ROLE_MSGS } from '../../../data/index.js'
 
 /* ─── NOTE TO DEVELOPER ────────────────────────────────────────────
@@ -90,12 +90,12 @@ export default function RecruiterPersona({ onSwitch }) {
       { html: '> INITIALIZING CANDIDATE SCANNER v2025...', delay: 0 },
       { html: '> LOADING FILE: <span style="color:#e2e8f0">JILLIAN GRACE D. BURILA</span>', delay: 400 },
       { html: '> LOCATION: <span style="color:#e2e8f0">HINUNANGAN, SOUTHERN LEYTE, PH</span>', delay: 750 },
-      { html: '> ACADEMIC RANK: <span style="color:#f59e0b">MAGNA CUM LAUDE ★</span>', delay: 1050 },
-      { html: '> COMPETITION STATUS: <span style="color:#f59e0b">ROBOTHON CHAMPION 2024</span>', delay: 1300 },
-      { html: '> INTERNATIONAL: <span style="color:#e2e8f0">VIETNAM CULTURAL EXCHANGE ✓</span>', delay: 1550 },
-      { html: '> SYSTEMS DEPLOYED: <span style="color:#4ade80">3 CONFIRMED ✓</span>', delay: 1800 },
-      { html: '> THREAT LEVEL TO MEDIOCRITY: <span style="color:#f59e0b">CRITICAL</span>', delay: 2050 },
-      { html: '> CANDIDATE STATUS: <span style="color:#4ade80">AVAILABLE FOR HIRE ✓</span>', delay: 2300 },
+      { html: '> CURRENT ROLE: <span style="color:#f59e0b">SOFTWARE ENGINEER I · XELEQT TECHNOLOGY INNOVATIONS INC.</span>', delay: 1000 },
+      { html: '> EXPERIENCE: <span style="color:#e2e8f0">1 YR+ PROFESSIONAL · INTERNSHIP · 3 PRIOR DEPLOYMENTS</span>', delay: 1300 },
+      { html: '> PRIMARY STACK: <span style="color:#22d3ee">React · Node.js · Django · MySQL · Python · Unity · C/C++</span>', delay: 1600 },
+      { html: '> ACADEMIC RANK: <span style="color:#f59e0b">MAGNA CUM LAUDE ★</span>', delay: 1900 },
+      { html: '> COMPETITION STATUS: <span style="color:#f59e0b">ROBOTHON NATIONAL CHAMPION 2024</span>', delay: 2150 },
+      { html: '> CANDIDATE STATUS: <span style="color:#4ade80">OPEN TO OPPORTUNITIES ✓</span>', delay: 2400 },
     ]
 
     function runBoot() {
@@ -116,14 +116,14 @@ export default function RecruiterPersona({ onSwitch }) {
         const p = root.querySelector('#bootPrompt')
         if (p) p.classList.add('show')
         booted = true
-      }, 2800)
+      }, 2900)
     }
 
     /* — STATS — */
     function animateStats() {
       const bars = [
-        { id: 'sf-tech', val: 92 }, { id: 'sf-lead', val: 88 },
-        { id: 'sf-comm', val: 95 }, { id: 'sf-build', val: 85 },
+        { id: 'sf-tech', val: 94 }, { id: 'sf-lead', val: 88 },
+        { id: 'sf-comm', val: 88 }, { id: 'sf-build', val: 90 },
         { id: 'sf-creat', val: 80 },
       ]
       bars.forEach((b, i) => setTimeout(() => {
@@ -349,7 +349,7 @@ export default function RecruiterPersona({ onSwitch }) {
     <>
       <style>{RPG_CSS}</style>
       <div ref={rootRef} className="rpg-root" />
-      <SwitchButton onSwitch={onSwitch} />
+      <JGLogo onSwitch={onSwitch} />
     </>
   )
 }
@@ -362,8 +362,8 @@ function buildHTML() {
 
 <div id="rpg-topbar">
   <div class="rpg-tb-brand">CANDIDATE FILE</div>
-  <div class="rpg-tb-id">REF: JGB-2025 · CLEARANCE: MAGNA CUM LAUDE</div>
-  <div class="rpg-tb-status"><div class="rpg-pdot"></div>AVAILABLE FOR HIRE</div>
+  <div class="rpg-tb-id">REF: JGB-2025 · SWE I @ XELEQT · MAGNA CUM LAUDE</div>
+  <div class="rpg-tb-status"><div class="rpg-pdot"></div>OPEN TO OPPORTUNITIES</div>
 </div>
 
 <div id="rpg-hintbar"><span id="hintText">LOADING...</span></div>
@@ -383,8 +383,8 @@ function buildHTML() {
           <div class="rpg-avatar" id="avatarBtn" onclick="window._rpgShowStat('xp')">JG</div>
           <div class="rpg-avatar-hint">[ CLICK FOR XP ]</div>
           <div class="rpg-char-name">Jillian Grace</div>
-          <div class="rpg-char-class" onclick="document.querySelector('#s2') && window._rpgNavigate(1)" style="cursor:pointer">FULL-STACK ENGINEER ↗</div>
-          <div class="rpg-char-sub">Subclass: Game Dev · IoT Specialist</div>
+          <div class="rpg-char-class" onclick="document.querySelector('#s2') && window._rpgNavigate(1)" style="cursor:pointer">FULL-STACK · GAME DEV · IoT ↗</div>
+          <div class="rpg-char-sub">SWE I @ Xeleqt · React · Node.js · Unity · C/C++</div>
           <div class="rpg-char-info">Hinunangan, S. Leyte<br>jillianburila@gmail.com</div>
           <div class="rpg-lvl" onclick="window._rpgShowStat('xp')">
             <div class="rpg-lvl-n">22</div>
@@ -397,8 +397,8 @@ function buildHTML() {
           <div class="rpg-sec-lbl">// CORE ATTRIBUTES — CLICK ANY STAT TO INSPECT</div>
           ${['tech','lead','comm','build','creat'].map((k,i)=>{
             const colors=['#22d3ee','#f59e0b','#a78bfa','#4ade80','#f87171']
-            const labels=['TECH','LEAD','COMM','BUILD','CREAT']
-            const vals=[92,88,95,85,80]
+            const labels=['TECH','LEAD','COMM','SHIP','CREAT']
+            const vals=[94,88,88,90,80]
             return `<div class="rpg-stat-row" id="sr-${k}" onclick="window._rpgShowStat('${k}')">
               <div class="rpg-sn">${labels[i]}</div>
               <div class="rpg-st"><div class="rpg-sf" id="sf-${k}" style="background:${colors[i]}"></div></div>
@@ -407,17 +407,18 @@ function buildHTML() {
           }).join('')}
           <div style="margin-top:1rem;padding-top:.9rem;border-top:1px solid rgba(255,255,255,.07)">
             <div class="rpg-sec-lbl">// EQUIPPED — CLICK TO SEE IN SKILL TREE</div>
-            ${['React','Python','Django','Unity Engine','C / C++','IoT Dev'].map(s=>`<span class="rpg-eq-pill">${s}</span>`).join('')}
+            ${['React','Node.js','Django','MySQL','Unity Engine','C / C++','AWS','Git'].map(s=>`<span class="rpg-eq-pill">${s}</span>`).join('')}
           </div>
         </div>
       </div>
       <div>
         <div class="rpg-card" style="height:100%">
           <div class="rpg-sec-lbl">// FIELD RECORD</div>
-          ${[['Graduation rank','MAGNA'],['Systems deployed','3'],['Robothon title','CHAMP'],['Natl competitions','2×'],['Teams led','4+'],['Countries','2']].map(([l,v])=>`
+          ${[['Current role','SWE I · XELEQT'],['Grad rank','MAGNA CUM LAUDE'],['Systems deployed','3+ LIVE'],['Robothon title','CHAMP'],['Natl competitions','2×'],['Teams led','4+']].map(([l,v])=>`
           <div class="rpg-qs-row"><span class="rpg-qs-l">${l}</span><span class="rpg-qs-v">${v}</span></div>`).join('')}
           <div style="margin-top:.9rem;padding-top:.8rem;border-top:1px solid rgba(255,255,255,.07)">
             <div class="rpg-sec-lbl">// ACTIVE BUFFS</div>
+            <div style="font-size:10.5px;color:#f59e0b;line-height:2">+ Robothon Champion 2024</div>
             <div style="font-size:10.5px;color:#4ade80;line-height:2">+ Top Tutor Recognition</div>
             <div style="font-size:10.5px;color:#f59e0b;line-height:2">+ Scintillate Award</div>
             <div style="font-size:10.5px;color:#a78bfa;line-height:2">+ Vietnam Exchange</div>
@@ -448,7 +449,7 @@ function buildHTML() {
     <div style="max-width:820px;width:100%">
       <div class="rpg-filter-row">
         <span style="font-size:9.5px;color:var(--muted);letter-spacing:.1em;margin-right:4px">FILTER:</span>
-        ${['all','Unity','Full-Stack','Team Lead','IoT'].map(t=>`<span class="rpg-ftag${t==='all'?' on':''}" onclick="window._rpgFilterQuests('${t}',this)">${t.toUpperCase()}</span>`).join('')}
+        ${['all','Full-Stack','SaaS','Live App','Unity','Django','IoT','Deployed','Client Project','Government'].map(t=>`<span class="rpg-ftag${t==='all'?' on':''}" onclick="window._rpgFilterQuests('${t}',this)">${t.toUpperCase()}</span>`).join('')}
       </div>
       <div id="questList"></div>
     </div>
@@ -460,7 +461,7 @@ function buildHTML() {
       <div id="achGrid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px"></div>
       <div style="text-align:center;margin-top:12px">
         <span style="display:inline-flex;align-items:center;gap:8px;background:rgba(245,158,11,.13);border:1px solid rgba(245,158,11,.28);border-radius:2px;padding:5px 14px;font-size:11px;color:#f59e0b">
-          TOTAL XP: <strong>9,820</strong> · RANK: EXCEPTIONAL CANDIDATE
+          TOTAL XP: <strong>15,100</strong> · RANK: <span style="color:#22d3ee">FULL-STACK · GAME DEV · EMBEDDED · FOUNDER</span>
         </span>
       </div>
     </div>
@@ -485,6 +486,16 @@ function buildHTML() {
             <div style="display:flex;align-items:center;gap:8px"><div style="color:#f59e0b;opacity:.7;width:16px">${ico}</div><div style="font-size:11px;color:#e2e8f0">${val}</div></div>
             <div class="rpg-c-copy">CLICK TO COPY</div>
           </div>`).join('')}
+          <!-- TODO: Add LinkedIn URL below once provided -->
+          <!-- <div class="rpg-c-line" onclick="window.open('https://linkedin.com/in/YOUR_URL','_blank')">
+            <div style="display:flex;align-items:center;gap:8px"><div style="color:#f59e0b;opacity:.7;width:16px">in</div><div style="font-size:11px;color:#e2e8f0">linkedin.com/in/YOUR_URL</div></div>
+            <div class="rpg-c-copy">OPEN</div>
+          </div> -->
+          <!-- TODO: Add resume link below once provided -->
+          <!-- <div class="rpg-c-line" onclick="window.open('YOUR_RESUME_URL','_blank')">
+            <div style="display:flex;align-items:center;gap:8px"><div style="color:#f59e0b;opacity:.7;width:16px">↓</div><div style="font-size:11px;color:#e2e8f0">Resume / CV</div></div>
+            <div class="rpg-c-copy">OPEN</div>
+          </div> -->
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import SwitchButton from '../../shared/SwitchButton.jsx'
+import JGLogo from '../../shared/JGLogo.jsx'
 import { STARS, CONSTELLATION_LINES, BASE_SYSTEM_PROMPT, FULL_STORY_CONTEXT, GENERAL_SUGGESTIONS, PERSONAL } from '../../../data/index.js'
 
 /* ─── NOTE ─────────────────────────────────────────────────────────
@@ -98,7 +98,7 @@ export default function CuriousPersona({ onSwitch }) {
 
       // Add a focus message to the chat (don't reset — preserves ongoing conversation)
       setTimeout(() => {
-        addMsg('host', 'HOST', `Now exploring Jillian's <strong style="color:${s.color}">${s.label}</strong> moment. Ask about it — or anything else.`)
+        addMsg('host', 'HOST', `Now exploring Jillian's <strong style="color:${s.color}">${s.label}</strong> hat. Ask about it — or anything else.`)
         setSugs(s.sugs.slice(0, 3))
       }, 200)
     }
@@ -246,7 +246,7 @@ export default function CuriousPersona({ onSwitch }) {
     <>
       <style>{CURIOUS_CSS}</style>
       <div ref={rootRef} className="curious-root" />
-      <SwitchButton onSwitch={onSwitch} />
+      <JGLogo onSwitch={onSwitch} />
     </>
   )
 }
@@ -258,7 +258,7 @@ function buildHTML() {
 
 <div id="ctopbar">
   <div class="ctb-l">JILLIAN GRACE · HER UNIVERSE</div>
-  <div class="ctb-r"><div class="ctb-pulse"></div>7 STARS · 1 STORY</div>
+  <div class="ctb-r"><div class="ctb-pulse"></div>7 HATS · 1 PERSON</div>
 </div>
 
 <div id="intro">
@@ -280,7 +280,7 @@ function buildHTML() {
     <div id="m-tags"></div>
     <div class="cm-chat-hint" onclick="window._curiousOpenChat()">
       <div class="cm-hint-dot"></div>
-      <span>Ask Jillian about this moment</span>
+      <span>Ask Jillian about this</span>
       <span style="margin-left:auto;opacity:.4">↗</span>
     </div>
   </div>
