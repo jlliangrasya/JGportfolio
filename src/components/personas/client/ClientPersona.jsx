@@ -486,12 +486,12 @@ export default function ClientPersona({ onSwitch }) {
                     <span className="cl-cd r"></span><span className="cl-cd y"></span><span className="cl-cd g"></span>
                     <span className="cl-code-title">jillian.config.js</span>
                   </div>
-                  <pre className="cl-code-body">{`{
+                  <pre className="cl-code-body" dangerouslySetInnerHTML={{ __html: `{
   role:   "Software Engineer I",
   at:     "Xeleqt Technology",
   bonus:  "ran real business",
   status: <span class="cl-cv">● open to freelance</span>
-}`}</pre>
+}` }}/>
                 </LiquidGlass>
               </div>
             </div>
