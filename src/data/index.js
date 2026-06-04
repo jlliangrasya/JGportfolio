@@ -24,7 +24,7 @@ export const PERSONA_BTNS = [
 export const STATS = [
   { key: 'tech',  value: 92, color: 'var(--cyan)',
     sources: [
-      { title: 'HyPTech + Biometrics', text: 'Sole architect — entire frontend + backend + IoT hardware bridge. React, Django, biometric sensor integration.' },
+      { title: 'HyPTech + Biometrics', text: 'Team lead and lead web developer — architected the full frontend + backend + IoT hardware bridge alongside the team. React, Django, biometric sensor integration.' },
       { title: 'XDefender (Unity)',     text: 'Built 50% of gameplay features. C# scripting, inventory systems, performance optimization.' },
       { title: 'Embedded / Robothon',  text: 'Hardware-level programming for the robot that won the 2024 National Championship.' },
       { title: 'Senior Citizen Tracker', text: 'Full frontend and UI/UX in Visual Basic. Deployed to a real barangay.' },
@@ -105,7 +105,7 @@ export const QUESTS = [
     stack: ['Unity','C#','Game Design','QA','Performance'] },
   { ico: '🛡', name: 'HyPTech + Biometric System', org: 'SLSU · Jun–Nov 2024',
     status: 'COMPLETED', statusClass: 'st-done', xp: '+1,200 XP',
-    desc: 'Sole architect of the <span>entire frontend + backend</span>. Integrated biometric hardware. Led team through Agile methodology to full deployment.',
+    desc: 'As <span>team lead and lead web developer</span>, architected the full frontend + backend alongside the team. Integrated biometric hardware. Drove Agile delivery to full deployment.',
     stack: ['Full-Stack','React','Django','IoT','Agile','Team Lead'] },
   { ico: '📜', name: 'Senior Citizen Age Tracker', org: 'SLSU · Feb 2024–Mar 2025',
     status: 'DEPLOYED', statusClass: 'st-dep', xp: '+950 XP',
@@ -225,7 +225,7 @@ export const STARS = {
     body: 'Not school projects — <strong>deployed systems</strong>. HyPTech with biometric hardware. XDefender gameplay at Rak Son Tech OPC. A Senior Citizen Tracker deployed to a real barangay.',
     tags: ['3 DEPLOYED SYSTEMS','FULL-STACK','UNITY GAME DEV','IoT'],
     sugs: ['Tell me about HyPTech','What was Rak Son Tech like?','How did the barangay deployment happen?'],
-    ctx: 'You are a full-stack engineer who ships. At Rak Son Tech OPC you built 50% of XDefender using Unity and C#. You built HyPTech — full stack + biometric IoT, sole architect. Age Tracker deployed to a real barangay.',
+    ctx: 'You are a full-stack engineer who ships. At Rak Son Tech OPC you built 50% of XDefender using Unity and C#. For HyPTech, you were the team lead and lead web developer — you and your team built the full stack + biometric IoT system together. Age Tracker deployed to a real barangay.',
   },
   grace: {
     label: 'Grace Cup Business', year: '2020–2022', pos: { x: 27, y: 42 }, size: 26, color: '#f59e0b',
@@ -266,7 +266,7 @@ export const CONSTELLATION_LINES = [
 /* ── GEMINI API BASE SYSTEM PROMPT ── */
 export const BASE_SYSTEM_PROMPT = `You are Jillian Grace D. Burila — a 22-year-old full-stack engineer from Hinunangan, Southern Leyte, Philippines who graduated Magna Cum Laude from SLSU in June 2025.
 
-Background: Grace Cup business manager at 19 (2020-2022), ESL Top Tutor (2023-2024), freelance ESL 1→17 students in 2.5 months (2025), Game Dev Intern at Rak Son Tech OPC building XDefender in Unity (2025), sole architect of HyPTech full-stack + IoT system, Senior Citizen Tracker deployed to real barangay, Rotaract President built from ₱0 to ₱30,000, first engineering student at SLSU for Vietnam cultural exchange, Robothon National Champion 2024, National Qualifier 2025.
+Background: Grace Cup business manager at 19 (2020-2022), ESL Top Tutor (2023-2024), freelance ESL 1→17 students in 2.5 months (2025), Game Dev Intern at Rak Son Tech OPC building XDefender in Unity (2025), team lead and lead web developer of HyPTech full-stack + IoT system (group project), Senior Citizen Tracker deployed to real barangay, Rotaract President built from ₱0 to ₱30,000, first engineering student at SLSU for Vietnam cultural exchange, Robothon National Champion 2024, National Qualifier 2025.
 
 Stack: React, Django, Python, C/C++, Unity, IoT, Embedded Systems, PHP, Java, Tailwind, Bootstrap, AutoCAD 3D.
 Contact: jillianburila@gmail.com | github.com/jlliangrasya | 09385056299
