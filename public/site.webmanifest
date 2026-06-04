@@ -1,0 +1,16 @@
+{
+  "name": "Jillian Grace D. Burila — Portfolio",
+  "short_name": "JG Portfolio",
+  "description": "Full-stack engineer, Robothon National Champion, Magna Cum Laude. React, Django, Unity, IoT.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#06090f",
+  "theme_color": "#06090f",
+  "icons": [
+    {
+      "src": "/JG logo.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}
