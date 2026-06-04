@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react'
-import SwitchButton from '../../shared/SwitchButton.jsx'
 import JGLogo from '../../shared/JGLogo.jsx'
 import {
   BOOT_LINES, GIT_LOG, STORY_LINES, PERSONAL,
@@ -86,13 +85,14 @@ export default function CollaboratorPersona({ onSwitch }) {
       await print([
         ['jillian grace d. burila', 'cyan'], null,
         ['  engineer     →  full-stack · game dev · embedded · iot', 'sub'],
+        ['  employer     →  software engineer i · xeleqt technology', 'sub'],
         ['  teacher      →  esl · 1→17 students · top tutor', 'sub'],
         ['  entrepreneur →  ran a real business at 19', 'sub'],
         ['  leader       →  rotaract president · student ambassador', 'sub'],
         ['  champion     →  robothon national champion 2024', 'sub'], null,
         ['  location  :  hinunangan, southern leyte, philippines', 'muted'],
         ['  school    :  slsu · magna cum laude · bs comp eng 2025', 'muted'],
-        ['  status    :  available for hire ✓', 'green'],
+        ['  status    :  software engineer i @ xeleqt · shipping ✓', 'green'],
       ])
       chips(['skills', 'git log', 'projects', 'awards', 'cat story'])
     })
@@ -174,13 +174,37 @@ export default function CollaboratorPersona({ onSwitch }) {
         ['│      built 50% of gameplay features at rak son tech opc', 'sub'],
         ['│      inventory system · power-ups · performance optimization', 'sub'], null,
         ['├─ [02] HyPTech + Biometric System           [DEPLOYED]', 'white'],
-        ['│      React · Django · IoT · Agile · Team Lead', 'muted'],
+        ['│      React · Django · Python · IoT · Agile', 'muted'],
         ['│      sole architect — full frontend + backend architecture', 'sub'],
         ['│      biometric hardware bridge · led agile team to delivery', 'sub'], null,
-        ['└─ [03] Senior Citizen Age Tracker           [DEPLOYED → BARANGAY]', 'green'],
-        ['       Visual Basic · UI/UX · Team Lead', 'muted'],
-        ['       designed full ui/ux and frontend from scratch', 'sub'],
-        ['       selected for + deployed to actual local government', 'sub'],
+        ['├─ [03] Senior Citizen Age Tracker (SCATS)   [DEPLOYED → BARANGAY]', 'green'],
+        ['│      Visual Basic .NET · UI/UX · Team Lead', 'muted'],
+        ['│      designed full ui/ux from scratch · deployed to govt', 'sub'],
+        ['│      selected by evaluators for real barangay adoption', 'sub'], null,
+        ['├─ [04] BrightFolks — ESL Management SaaS    [LIVE]', 'white'],
+        ['│      React TypeScript · MySQL · PWA', 'muted'],
+        ['│      multi-role platform: students, teachers, admins', 'sub'],
+        ['│      class booking · session monitoring · auto reminders', 'sub'], null,
+        ['├─ [05] PesoWise — Personal Finance App       [LIVE]', 'white'],
+        ['│      React · Firebase · PWA', 'muted'],
+        ['│      budgets, loans, savings, emergency funds, bank overview', 'sub'],
+        ['│      couples mode for shared expense tracking', 'sub'], null,
+        ['├─ [06] Acad Consultancy Platform             [IN PROGRESS]', 'white'],
+        ['│      React.js · SaaS', 'muted'],
+        ['│      client records, writer assignments, payroll, expenses', 'sub'],
+        ['│      replaced google sheets with a full custom platform', 'sub'], null,
+        ['├─ [07] LoadTrack — Sales & Collections       [LIVE]', 'white'],
+        ['│      React · Live App', 'muted'],
+        ['│      load inventory, client accounts, daily sales tracking', 'sub'],
+        ['│      collector-based field workflows for load dealers', 'sub'], null,
+        ['├─ [08] Cavella Philippines — Biz Dashboard   [DELIVERED]', 'white'],
+        ['│      React · Client Project', 'muted'],
+        ['│      inventory, sales performance, client management', 'sub'],
+        ['│      real-time operations view for a live business', 'sub'], null,
+        ['└─ [09] StayPH — Long-Term Rental Platform    [CONCEPT]', 'white'],
+        ['       React · PropTech · Philippines', 'muted'],
+        ['       boardinghouse and apartment marketplace for filipinos', 'sub'],
+        ['       bridging the gap from facebook groups to a real platform', 'sub'],
       ], true)
       chips(['cat story', 'skills', 'git log', 'hire'])
     })
@@ -223,9 +247,9 @@ export default function CollaboratorPersona({ onSwitch }) {
         [`  email    →  ${PERSONAL.email}`, 'cyan'],
         [`  github   →  ${PERSONAL.github}`, 'cyan'],
         [`  phone    →  ${PERSONAL.phone}`, 'cyan'],
-        [`  location →  ${PERSONAL.location}`, 'muted'], null,
-        ['  status   →  available for hire ✓', 'green'],
-        ['  open to  →  full-time · freelance · collaboration', 'green'],
+        [`  location  →  ${PERSONAL.location}`, 'muted'], null,
+        ['  currently →  software engineer i @ xeleqt technology ✓', 'green'],
+        ['  open to   →  freelance · collaboration · the right opportunity', 'green'],
       ])
       chips(['projects', 'git log', 'man jillian'])
     })
@@ -239,7 +263,7 @@ export default function CollaboratorPersona({ onSwitch }) {
         ['       hire [--role=TYPE] [--urgency=HIGH]', 'sub'], null,
         ['EXIT STATUS', 'cyan'],
         ['       0  she joins your team', 'green'],
-        ['       1  you waited too long', 'red'], null,
+        ["       1  you missed your window. she's already employed.", 'red'], null,
         ['AUTHOR', 'cyan'],
         [`       ${PERSONAL.email}`, 'muted'], null,
         ['JILLIAN(1)                 Jun 2025                JILLIAN(1)', 'white'],
@@ -358,7 +382,6 @@ export default function CollaboratorPersona({ onSwitch }) {
       <style>{TERM_CSS}</style>
       <div ref={rootRef} className="term-root" />
       <JGLogo onSwitch={onSwitch} />
-      <SwitchButton onSwitch={onSwitch} />
     </>
   )
 }
