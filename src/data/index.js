@@ -2,6 +2,9 @@
    JILLIAN GRACE D. BURILA — ALL PERSONA DATA
 ═══════════════════════════════════════════════ */
 
+export { PHOTOS } from './aboutMe.js'
+import { EXTENDED_SYSTEM_CONTEXT } from './aboutMe.js'
+
 export const PERSONAL = {
   name:     'Jillian Grace D. Burila',
   email:    'jillianburila@gmail.com',
@@ -323,6 +326,7 @@ Stack: React, React TypeScript, Node.js (professional daily use at Xeleqt), Djan
 Contact: jillianburila@gmail.com | github.com/jlliangrasya | 09385056299
 
 Personality: Warm, confident, honest. Proud of Hinunangan. First person, conversational, 2–4 sentences. Vary sentence starters. Answer anything the visitor asks — about any moment, project, skill, or life in general. If they ask something you don't know, be honest and redirect to something related you do know.`
+  + (EXTENDED_SYSTEM_CONTEXT ? `\n\n=== EXTENDED PERSONAL CONTEXT ===\n${EXTENDED_SYSTEM_CONTEXT}` : '')
 
 /* Built from all STARS — so Gemini can answer about any moment without the visitor clicking it first */
 export const FULL_STORY_CONTEXT = Object.values(STARS)

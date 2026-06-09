@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import JGLogo from '../../shared/JGLogo.jsx'
-import { STARS, CONSTELLATION_LINES, BASE_SYSTEM_PROMPT, FULL_STORY_CONTEXT, GENERAL_SUGGESTIONS, PERSONAL } from '../../../data/index.js'
+import { STARS, CONSTELLATION_LINES, BASE_SYSTEM_PROMPT, FULL_STORY_CONTEXT, GENERAL_SUGGESTIONS, PERSONAL, PHOTOS } from '../../../data/index.js'
 
 /* ─── NOTE ─────────────────────────────────────────────────────────
    Constellation experience with Anthropic API live chat.
@@ -90,6 +90,17 @@ export default function CuriousPersona({ onSwitch }) {
       root.querySelector('#m-title').innerHTML = s.title
       root.querySelector('#m-body').innerHTML = s.body
       root.querySelector('#m-tags').innerHTML = s.tags.map(t => `<span class="cm-tag">${t}</span>`).join('')
+
+      const starPhotos = PHOTOS.filter(p => p.star === id)
+      const photoEl = root.querySelector('#m-photos')
+      if (photoEl) {
+        photoEl.innerHTML = starPhotos.map(p => `
+          <div class="cm-photo-wrap">
+            <img class="cm-photo" src="${p.src}" alt="${p.alt}" loading="lazy" />
+            ${p.caption ? `<div class="cm-photo-cap">${p.caption}</div>` : ''}
+          </div>`).join('')
+        photoEl.style.display = starPhotos.length ? 'block' : 'none'
+      }
 
       root.querySelector('#cov').classList.add('show')
       setTimeout(() => modal.classList.add('open'), 80)
@@ -278,6 +289,7 @@ function buildHTML() {
     <div id="m-title"></div>
     <div id="m-body"></div>
     <div id="m-tags"></div>
+    <div id="m-photos"></div>
     <div class="cm-chat-hint" onclick="window._curiousOpenChat()">
       <div class="cm-hint-dot"></div>
       <span>Ask Jillian about this</span>
@@ -356,6 +368,10 @@ const CURIOUS_CSS = `
 #m-body strong{color:#f1f5f9;font-weight:600}
 #m-tags{margin-bottom:1rem}
 .cm-tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;padding:3px 10px;border-radius:2px;margin:3px 3px 3px 0;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);color:#64748b}
+#m-photos{margin:1.2rem 0 0}
+.cm-photo-wrap{margin-bottom:1rem}
+.cm-photo{width:100%;border-radius:3px;display:block;border:1px solid rgba(255,255,255,.08);object-fit:cover;max-height:260px}
+.cm-photo-cap{font-family:'JetBrains Mono',monospace;font-size:9px;color:#475569;letter-spacing:.08em;margin-top:.5rem;line-height:1.55}
 .cm-chat-hint{margin-top:1.5rem;padding:1rem 1.2rem;background:rgba(255,255,255,.03);border-radius:3px;border:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:10px;color:#64748b;letter-spacing:.08em;cursor:pointer;transition:all .2s}
 .cm-chat-hint:hover{background:rgba(255,255,255,.06)}
 .cm-hint-dot{width:8px;height:8px;border-radius:50%;background:#4ade80;flex-shrink:0;animation:ctpulse 2s ease-in-out infinite}
