@@ -54,9 +54,9 @@ const PROJECTS = [
   {
     cat: 'FULL-STACK + IoT', badge: 'DEPLOYED', accentKey: 'teal',
     title: 'HyPTech — Biometric Management System',
-    body: 'A university needed a complete management system with biometric hardware integration. Sole architect of the entire frontend and backend — React UI to Django APIs to physical sensor comms — leading a team through Agile delivery to a fully deployed system.',
+    body: 'A university needed a complete management system with biometric hardware integration. As team lead and lead web developer, I architected the frontend and backend — React UI to Django APIs to physical sensor comms — driving the group through Agile delivery to a fully deployed system.',
     stack: ['React','Django','Python','IoT Hardware','Agile'],
-    stat: '100%', statLbl: 'SOLE ARCHITECT · FRONT + BACK',
+    stat: 'Lead', statLbl: 'TEAM LEAD · LEAD WEB DEVELOPER',
     icon: '⬡',
   },
   {
@@ -486,12 +486,12 @@ export default function ClientPersona({ onSwitch }) {
                     <span className="cl-cd r"></span><span className="cl-cd y"></span><span className="cl-cd g"></span>
                     <span className="cl-code-title">jillian.config.js</span>
                   </div>
-                  <pre className="cl-code-body">{`{
+                  <pre className="cl-code-body" dangerouslySetInnerHTML={{ __html: `{
   role:   "Software Engineer I",
   at:     "Xeleqt Technology",
   bonus:  "ran real business",
   status: <span class="cl-cv">● open to freelance</span>
-}`}</pre>
+}` }}/>
                 </LiquidGlass>
               </div>
             </div>

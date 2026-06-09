@@ -175,7 +175,7 @@ export default function CollaboratorPersona({ onSwitch }) {
         ['│      inventory system · power-ups · performance optimization', 'sub'], null,
         ['├─ [02] HyPTech + Biometric System           [DEPLOYED]', 'white'],
         ['│      React · Django · Python · IoT · Agile', 'muted'],
-        ['│      sole architect — full frontend + backend architecture', 'sub'],
+        ['│      team lead · lead web developer — frontend + backend', 'sub'],
         ['│      biometric hardware bridge · led agile team to delivery', 'sub'], null,
         ['├─ [03] Senior Citizen Age Tracker (SCATS)   [DEPLOYED → BARANGAY]', 'green'],
         ['│      Visual Basic .NET · UI/UX · Team Lead', 'muted'],
