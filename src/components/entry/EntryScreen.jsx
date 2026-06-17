@@ -52,7 +52,7 @@ export default function EntryScreen({ onSelect }) {
 
         <motion.div className="persona-grid" variants={gridVariants}>
           {PERSONA_BTNS.map((btn) => (
-            <motion.div key={btn.key} variants={btnVariants}>
+            <motion.div key={btn.key} variants={btnVariants} style={{ display: 'flex' }}>
               <PersonaButton
                 role={btn.role}
                 tagline={btn.tagline}

@@ -428,7 +428,7 @@ const CURIOUS_CSS = `
 @keyframes ctooltip-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
 
 /* ── CHAT PANEL ── */
-#chat-panel{width:360px;background:rgba(6,10,18,.98);border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;transform:translateY(16px) scale(.95);transform-origin:bottom right;opacity:0;pointer-events:none;transition:transform .38s cubic-bezier(.22,1,.36,1),opacity .3s ease;max-height:480px;display:flex;flex-direction:column;box-shadow:0 24px 60px rgba(0,0,0,.7),0 0 0 1px rgba(245,158,11,.06)}
+#chat-panel{width:360px;height:520px;background:rgba(6,10,18,.98);border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;transform:translateY(16px) scale(.95);transform-origin:bottom right;opacity:0;pointer-events:none;transition:transform .38s cubic-bezier(.22,1,.36,1),opacity .3s ease;display:flex;flex-direction:column;box-shadow:0 24px 60px rgba(0,0,0,.7),0 0 0 1px rgba(245,158,11,.06)}
 #chat-panel.open{transform:none;opacity:1;pointer-events:all}
 
 /* ── CHAT HEADER ── */
@@ -513,7 +513,7 @@ const CURIOUS_CSS = `
   #m-title{font-size:clamp(1.3rem,3vw,1.8rem)}
   #m-body{font-size:.92rem}
   #chat-widget{bottom:1rem;right:.8rem}
-  #chat-panel{width:min(340px,90vw);max-height:400px;border-radius:14px}
+  #chat-panel{width:min(340px,90vw);height:460px;border-radius:14px}
   #bubble-btn,#bubble-btn .bic-avatar{width:48px;height:48px}
   .cstar-lbl{font-size:8px}
   .cstar-yr{font-size:7px}
@@ -524,7 +524,7 @@ const CURIOUS_CSS = `
   #m-title{font-size:1.2rem}
   #m-body{font-size:.85rem;line-height:1.65}
   .cm-tag{font-size:8px;padding:2px 7px}
-  #chat-panel{width:calc(100vw - 1.6rem);max-height:360px}
+  #chat-panel{width:calc(100vw - 1.6rem);height:420px}
   .cmsg-bub{font-size:.85rem;padding:7px 10px}
   .csug{font-size:8px;padding:3px 8px}
   #chat-tooltip{display:none}
