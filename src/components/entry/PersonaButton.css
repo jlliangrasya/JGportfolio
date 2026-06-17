@@ -32,8 +32,9 @@
 }
 
 .p-btn:hover {
-  background: rgba(34,211,238,0.05);
-  border-color: rgba(34,211,238,0.22);
+  background: rgba(34,211,238,0.07);
+  border-color: rgba(34,211,238,0.3);
+  box-shadow: 0 0 18px rgba(34,211,238,0.08);
 }
 
 .p-btn:hover::before,

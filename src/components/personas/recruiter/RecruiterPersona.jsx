@@ -83,6 +83,8 @@ export default function RecruiterPersona({ onSwitch }) {
       setTimeout(() => { nxt.style.transform = '' }, 10)
       updateNav()
       if (cur === 1) animateStats()
+      if (cur === 2) animateSkillNodes()
+      if (cur === 4) animateAchievements()
     }
 
     /* — BOOT — */
@@ -130,6 +132,32 @@ export default function RecruiterPersona({ onSwitch }) {
         const el = root.querySelector('#' + b.id)
         if (el) el.style.width = b.val + '%'
       }, i * 110))
+    }
+
+    function animateSkillNodes() {
+      const nodes = root.querySelectorAll('.rpg-node')
+      nodes.forEach((n, i) => {
+        n.style.opacity = '0'
+        n.style.transform = 'translateY(8px) scale(0.96)'
+        setTimeout(() => {
+          n.style.transition = 'opacity 0.3s ease, transform 0.3s cubic-bezier(.22,1,.36,1)'
+          n.style.opacity = ''
+          n.style.transform = ''
+        }, 80 + i * 28)
+      })
+    }
+
+    function animateAchievements() {
+      const cards = root.querySelectorAll('.rpg-ach')
+      cards.forEach((c, i) => {
+        c.style.opacity = '0'
+        c.style.transform = 'translateY(12px) scale(0.97)'
+        setTimeout(() => {
+          c.style.transition = 'opacity 0.35s ease, transform 0.35s cubic-bezier(.22,1,.36,1)'
+          c.style.opacity = ''
+          c.style.transform = ''
+        }, 60 + i * 55)
+      })
     }
 
     function showStatPanel(key) {
@@ -538,10 +566,10 @@ const RPG_CSS = `
 @keyframes rpgpulse{0%,100%{opacity:1}50%{opacity:.25}}
 #rpg-hintbar{position:absolute;top:44px;left:0;right:0;z-index:19;display:flex;align-items:center;justify-content:center;padding:.35rem;background:rgba(245,158,11,.07);border-bottom:1px solid rgba(245,158,11,.28);font-size:10px;color:#f59e0b;opacity:.8;letter-spacing:.1em}
 #rpg-vp{position:absolute;top:80px;bottom:52px;left:0;right:0;overflow:hidden}
-.rpg-screen{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.2rem 1.5rem;opacity:0;pointer-events:none;transition:opacity .4s,transform .4s;transform:translateX(60px)}
+.rpg-screen{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.2rem 1.5rem;opacity:0;pointer-events:none;transition:opacity .38s cubic-bezier(.22,1,.36,1),transform .38s cubic-bezier(.22,1,.36,1);transform:translateX(60px)}
 .rpg-screen.rpg-active{opacity:1;pointer-events:all;transform:none}
-.rpg-screen.rpg-exit-l{opacity:0;transform:translateX(-60px)}
-.rpg-screen.rpg-exit-r{opacity:0;transform:translateX(60px)}
+.rpg-screen.rpg-exit-l{opacity:0;transform:translateX(-50px);transition:opacity .3s ease,transform .3s ease}
+.rpg-screen.rpg-exit-r{opacity:0;transform:translateX(50px);transition:opacity .3s ease,transform .3s ease}
 .rpg-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:3px;padding:1.1rem 1.3rem;position:relative}
 .rpg-card::before{content:'';position:absolute;top:-1px;left:-1px;width:11px;height:11px;border-top:1px solid #f59e0b;border-left:1px solid #f59e0b;opacity:.4}
 .rpg-card::after{content:'';position:absolute;bottom:-1px;right:-1px;width:11px;height:11px;border-bottom:1px solid #f59e0b;border-right:1px solid #f59e0b;opacity:.4}
@@ -629,11 +657,11 @@ const RPG_CSS = `
 .rpg-stag{font-size:10px;padding:2px 7px;background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.14);border-radius:2px;color:#94a3b8;cursor:pointer;transition:all .2s}
 .rpg-stag:hover{border-color:rgba(34,211,238,.3);color:#22d3ee}
 .rpg-ach{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:3px;padding:1rem;cursor:pointer;transition:all .25s}
-.rpg-ach:hover{transform:translateY(-2px)}
-.rpg-ach.legendary:hover{border-color:rgba(245,158,11,.4)}
-.rpg-ach.epic:hover{border-color:rgba(167,139,250,.35)}
-.rpg-ach.rare:hover{border-color:rgba(34,211,238,.3)}
-.rpg-ach.uncommon:hover{border-color:rgba(74,222,128,.25)}
+.rpg-ach:hover{transform:translateY(-3px)}
+.rpg-ach.legendary:hover{border-color:rgba(245,158,11,.4);box-shadow:0 6px 20px rgba(245,158,11,.1)}
+.rpg-ach.epic:hover{border-color:rgba(167,139,250,.35);box-shadow:0 6px 20px rgba(167,139,250,.1)}
+.rpg-ach.rare:hover{border-color:rgba(34,211,238,.3);box-shadow:0 6px 20px rgba(34,211,238,.08)}
+.rpg-ach.uncommon:hover{border-color:rgba(74,222,128,.25);box-shadow:0 6px 20px rgba(74,222,128,.08)}
 .rpg-ach-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:7px}
 .rpg-ach-ico{font-family:'Rajdhani',sans-serif;font-size:20px;font-weight:700;line-height:1}
 .rpg-ach.legendary .rpg-ach-ico{color:#f59e0b}

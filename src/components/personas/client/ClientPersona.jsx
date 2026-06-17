@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import JGLogo from '../../shared/JGLogo.jsx'
 import LiquidGlass from '../../shared/LiquidGlass.jsx'
 import profileImg from '../../../assets/jillian enhanced.jpg'
@@ -85,7 +86,16 @@ export default function ClientPersona({ onSwitch }) {
   const starsCanvasRef = useRef(null)
   const [dark, setDark]           = useState(true)
   const [carouselIdx, setCarouselIdx] = useState(0)
+  const prevIdxRef = useRef(0)
   const dragRef = useRef({ start: 0, dragging: false })
+
+  const goCarousel = (fn) => {
+    setCarouselIdx(i => {
+      const next = typeof fn === 'function' ? fn(i) : fn
+      prevIdxRef.current = i
+      return next
+    })
+  }
 
   /* ── EFFECTS ── */
   useEffect(() => {
@@ -229,8 +239,8 @@ export default function ClientPersona({ onSwitch }) {
     const dx = e.clientX - dragRef.current.start
     if (Math.abs(dx) > 50) {
       dx < 0
-        ? setCarouselIdx(i => (i + 1) % PROJECTS.length)
-        : setCarouselIdx(i => (i - 1 + PROJECTS.length) % PROJECTS.length)
+        ? goCarousel(i => (i + 1) % PROJECTS.length)
+        : goCarousel(i => (i - 1 + PROJECTS.length) % PROJECTS.length)
     }
   }
 
@@ -587,8 +597,15 @@ export default function ClientPersona({ onSwitch }) {
                 onPointerMove={onPointerMove}
                 onPointerUp={onPointerUp}
                 onPointerLeave={onPointerUp}
-                style={{ touchAction:'pan-y', userSelect:'none', cursor:'grab' }}
+                style={{ touchAction:'pan-y', userSelect:'none', cursor:'grab', position:'relative', overflow:'hidden' }}
               >
+                <AnimatePresence mode="wait" initial={false}>
+                <motion.div
+                  key={carouselIdx}
+                  initial={{ opacity: 0, x: carouselIdx > prevIdxRef.current ? 48 : -48 }}
+                  animate={{ opacity: 1, x: 0, transition: { duration: 0.38, ease: [0.22,1,0.36,1] } }}
+                  exit={{ opacity: 0, x: carouselIdx > prevIdxRef.current ? -48 : 48, transition: { duration: 0.25, ease: 'easeIn' } }}
+                >
                 <LiquidGlass
                   className="cl-case"
                   tint={pa}
@@ -625,19 +642,19 @@ export default function ClientPersona({ onSwitch }) {
                       </div>
                     </div>
                     <div className="cl-carr-nav">
-                      <button className="cl-carr-btn" onClick={e=>{e.stopPropagation();setCarouselIdx(i=>(i-1+PROJECTS.length)%PROJECTS.length)}} aria-label="Prev">
+                      <button className="cl-carr-btn" onClick={e=>{e.stopPropagation();goCarousel(i=>(i-1+PROJECTS.length)%PROJECTS.length)}} aria-label="Prev">
                         <svg viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg>
                       </button>
                       <div className="cl-carr-dots">
                         {PROJECTS.map((proj,i) => (
                           <button key={i}
                             className={`cl-carr-dot ${i===carouselIdx?'active':''}`}
-                            onClick={e=>{e.stopPropagation();setCarouselIdx(i)}}
+                            onClick={e=>{e.stopPropagation();goCarousel(i)}}
                             style={i===carouselIdx ? { background: ACCENT[proj.accentKey], boxShadow:`0 0 8px ${ACCENT[proj.accentKey]}80` } : {}}
                           />
                         ))}
                       </div>
-                      <button className="cl-carr-btn" onClick={e=>{e.stopPropagation();setCarouselIdx(i=>(i+1)%PROJECTS.length)}} aria-label="Next">
+                      <button className="cl-carr-btn" onClick={e=>{e.stopPropagation();goCarousel(i=>(i+1)%PROJECTS.length)}} aria-label="Next">
                         <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg>
                       </button>
                     </div>
@@ -648,6 +665,8 @@ export default function ClientPersona({ onSwitch }) {
                     </div>
                   </div>
                 </LiquidGlass>
+                </motion.div>
+                </AnimatePresence>
               </div>
             </div>
           </div>
@@ -829,8 +848,11 @@ const CLIENT_CSS = (dark) => `
 .cl-bg-svg{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
 .cl-wrap{max-width:1100px;margin:0 auto;padding:0 2.5rem;position:relative;z-index:1}
 @media(max-width:640px){.cl-wrap{padding:0 1.25rem}}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
 .reveal.visible{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.08s}
+.reveal:nth-child(3){transition-delay:.16s}
+.reveal:nth-child(4){transition-delay:.24s}
 
 /* ── TYPE ── */
 .cl-lbl{
