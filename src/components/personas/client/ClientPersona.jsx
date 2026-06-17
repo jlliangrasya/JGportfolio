@@ -449,7 +449,7 @@ export default function ClientPersona({ onSwitch }) {
                   <span className="cl-h1-cursor">_</span>
                 </h1>
                 <p className="cl-hero-p">
-                  Software Engineer I by day. Former business manager by foundation. I build production software at Xeleqt Technology — and I bring that same professional discipline to every client project.
+                  Software Engineer I by day. Former business manager by foundation. I build production software at Xeleqt Technology Innovations Inc. — a fast-growing startup — and I bring that same high-velocity discipline to every client project.
                   I don't just write code — I understand what it needs to <strong>do for your business.</strong>
                 </p>
                 <div className="cl-cta-row">
@@ -685,7 +685,7 @@ export default function ClientPersona({ onSwitch }) {
                   I don't ask what tech stack to use. I ask what problem you're actually trying to solve.
                 </blockquote>
                 <p className="cl-p">I grew a client base from <strong>1 to 17 students in 2.5 months</strong> — purely through referrals and results. That taught me: people hire people they trust.</p>
-                <p className="cl-p">The engineering part? <strong>Magna Cum Laude</strong>, BS Computer Engineering, SLSU 2025. National robotics champion. Three deployed systems — and now a full-time Software Engineer I at Xeleqt Technology, shipping in production.</p>
+                <p className="cl-p">The engineering part? <strong>Magna Cum Laude</strong>, BS Computer Engineering, SLSU 2025. National robotics champion. Three deployed systems — and now a full-time Software Engineer I at <strong>Xeleqt Technology Innovations Inc.</strong>, a fast-growing startup where she ships in production every day.</p>
                 <a className="cl-btn-p" href="#cl-contact" style={{ marginTop:'2rem',display:'inline-flex' }}>
                   <span>Work with me</span>
                   <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg>

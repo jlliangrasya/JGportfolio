@@ -85,7 +85,8 @@ export default function CollaboratorPersona({ onSwitch }) {
       await print([
         ['jillian grace d. burila', 'cyan'], null,
         ['  engineer     →  full-stack · game dev · embedded · iot', 'sub'],
-        ['  employer     →  software engineer i · xeleqt technology', 'sub'],
+        ['  stack        →  react · node.js · aws  ← daily at xeleqt', 'cyan'],
+        ['  employer     →  software engineer i · xeleqt technology · fast-growing startup', 'sub'],
         ['  teacher      →  esl · 1→17 students · top tutor', 'sub'],
         ['  entrepreneur →  ran a real business at 19', 'sub'],
         ['  leader       →  rotaract president · student ambassador', 'sub'],

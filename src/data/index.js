@@ -27,7 +27,7 @@ export const PERSONA_BTNS = [
 export const STATS = [
   { key: 'tech',  value: 94, color: 'var(--cyan)',
     sources: [
-      { title: 'Xeleqt Technology — Full-Stack SWE', text: 'Professional Software Engineer I trusted with developing multiple production platforms. React frontend, Node.js backend, AWS infrastructure in a fast-paced company environment.' },
+      { title: 'Xeleqt Technology — Full-Stack SWE', text: 'Software Engineer I at Xeleqt Technology Innovations Inc. — a fast-growing startup building innovative technology products. Trusted with full-stack development across multiple production platforms: React frontend, Node.js backend, AWS infrastructure.' },
       { title: 'HyPTech + Biometrics — Sole Architect', text: 'Designed the entire system: Django REST backend, React frontend, MySQL database, and hardware bridge to fingerprint sensor. No team member touched the stack — she built it start to finish.' },
       { title: 'XDefender — Unity Game Systems', text: 'Implemented 50% of gameplay: inventory system, power-up mechanics, enemy AI hooks, performance profiling. C# scripting in a production codebase at Rak Son Tech OPC using Git-based workflow.' },
       { title: 'Robothon Champion — Embedded C/C++', text: 'Wrote low-level firmware for the National Champion robot. Sensor reading, motor control, competition-grade reliability under pressure.' },
@@ -47,7 +47,7 @@ export const STATS = [
     ]},
   { key: 'build', value: 90, color: 'var(--green)',
     sources: [
-      { title: 'Xeleqt Technology — Production Systems', text: 'Currently building and shipping across multiple platforms as a full-time SWE. Real codebases, real deadlines, real users.' },
+      { title: 'Xeleqt Technology — Production Systems', text: 'Full-time Software Engineer I at Xeleqt — a fast-growing startup where impact is immediate and ownership is real. Building and shipping across multiple production platforms: real codebases, real deadlines, real users.' },
       { title: '3 Prior Deployments — Not Just Demos', text: 'XDefender shipped to players at Rak Son Tech OPC. HyPTech running at SLSU with real users. Senior Citizen Tracker in daily use at a barangay office. All three are live.' },
       { title: 'Agile Delivery',           text: 'Delivered HyPTech on schedule using Agile sprints. Scope managed, team coordinated, product shipped. Repeated the same discipline at Xeleqt in a professional setting.' },
     ]},
@@ -111,8 +111,8 @@ export const SKILL_BRANCHES = [
 export const QUESTS = [
   { ico: '💼', name: 'Software Engineer I — Xeleqt Technology', org: 'Xeleqt Technology Innovations Inc. · Oct 2025–Present · Full-Time',
     status: 'ACTIVE', statusClass: 'st-dep', xp: '+1,500 XP',
-    desc: 'Full-time Software Engineer I in a <span>fast-paced professional environment</span>. Trusted with full-stack development across multiple production platforms — <span>React frontend, Node.js backend, AWS infrastructure</span>. Works independently on real systems, not just tickets.',
-    stack: ['React','Node.js','AWS','Full-Stack','Professional'] },
+    desc: 'Full-time Software Engineer I at <span>Xeleqt Technology Innovations Inc.</span> — a <span>fast-growing startup</span> building innovative technology products. Trusted with full-stack development across multiple production platforms — <span>React frontend, Node.js backend, AWS infrastructure</span>. High-velocity environment where ownership is real and impact is immediate.',
+    stack: ['React','Node.js','AWS','Full-Stack','Startup','Professional'] },
   { ico: '⚔', name: 'XDefender (XODE) — Game Dev Internship', org: 'Rak Son Tech OPC · Jan–Apr 2025 · Internship',
     status: 'SHIPPED', statusClass: 'st-done', xp: '+850 XP',
     desc: 'Built <span>50% of all gameplay features</span> and the full inventory system for a production Unity title. Worked in a shared codebase with <span>Git-based version control</span> and sprint delivery. Enhanced game performance through testing and debugging. Code <span>shipped to real players</span>.',
@@ -176,10 +176,10 @@ export const ACHIEVEMENTS = [
 
 /* ── RECRUITER — ROLE MESSAGES ── */
 export const ROLE_MSGS = {
-  fulltime:   "Currently a Software Engineer I at Xeleqt. Magna Cum Laude. 3 prior deployments. National champion. She's not entry-level — she's already shipping.",
-  freelance:  "Full-time engineer by day. She's run a business, delivered production software, and managed a 17-student client pipeline. Deadlines are non-negotiable.",
-  intern:     "Already past the intern stage — working full-time as a Software Engineer I at Xeleqt. But open to the right opportunity.",
-  collab:     "Active SWE at Xeleqt. Full-stack (React + Node.js + Django) + game dev (Unity + C#) + embedded (C/C++ + IoT). Let's build something worth building.",
+  fulltime:   "Currently a Software Engineer I at Xeleqt — a fast-growing startup. Magna Cum Laude. 3 prior deployments. National champion. She's not entry-level — she's already shipping.",
+  freelance:  "Full-time engineer at a fast-growing startup by day. She's run a business, delivered production software, and managed a 17-student client pipeline. Deadlines are non-negotiable.",
+  intern:     "Already past the intern stage — working full-time as a Software Engineer I at Xeleqt Technology Innovations Inc., a fast-growing startup. But open to the right opportunity.",
+  collab:     "Active SWE at Xeleqt — a fast-growing startup. Full-stack (React + Node.js + Django) + game dev (Unity + C#) + embedded (C/C++ + IoT). Let's build something worth building.",
 }
 
 /* ── COLLABORATOR — TERMINAL ── */
@@ -199,7 +199,7 @@ export const BOOT_LINES = [
 ]
 
 export const GIT_LOG = [
-  { hash: 'a3f7d91', head: true,  date: 'Oct 2025',  msg: 'feat: join Xeleqt Technology as Software Engineer I · full-time production SWE', cls: 'green' },
+  { hash: 'a3f7d91', head: true,  date: 'Oct 2025',  msg: 'feat: join Xeleqt Technology as Software Engineer I · fast-growing startup · production SWE', cls: 'green' },
   { hash: 'f3a9c2e', head: false, date: 'Jun 2025',  msg: 'feat: graduate Magna Cum Laude · BS Computer Engineering · SLSU',  cls: 'white' },
   { hash: '8b71d3a', head: false, date: 'Apr 2025',  msg: 'feat: ship XDefender gameplay systems at Rak Son Tech OPC',         cls: 'white' },
   { hash: '4c2e91f', head: false, date: 'Nov 2024',  msg: 'feat: deploy HyPTech biometric system to production · led Agile team', cls: 'white' },
@@ -231,6 +231,7 @@ export const STORY_LINES = [
   { text: 'led clubs from nothing to something real.',       cls: 'sub' },
   { text: '',                                                cls: '' },
   { text: "now she's a software engineer i at xeleqt technology.", cls: 'white' },
+  { text: "a fast-growing startup. real product. real velocity.", cls: 'sub' },
   { text: "not 'aspiring'. not 'looking for opportunities'.",     cls: 'sub' },
   { text: 'shipping. every day.',                                 cls: 'cyan' },
   { text: '',                                                cls: '' },
@@ -297,10 +298,10 @@ export const STARS = {
     label: 'Software Engineer I', year: 'Oct 2025–present', pos: { x: 35, y: 55 }, size: 28, color: '#2dd4bf',
     num: 'APOGEE', place: 'XELEQT TECHNOLOGY · PRESENT',
     title: 'Now she ships <span style="color:#2dd4bf">professionally. Every day.</span>',
-    body: 'Software Engineer I at <strong>Xeleqt Technology Innovations Inc.</strong> — React frontend, Node.js backend, AWS infrastructure across multiple production platforms. This is the day job. She\'s not aspiring. She\'s already here.',
+    body: 'Software Engineer I at <strong>Xeleqt Technology Innovations Inc.</strong> — a <strong>fast-growing startup</strong> building innovative technology products. React frontend, Node.js backend, AWS infrastructure across multiple production platforms. High-velocity environment. Real ownership. She\'s not aspiring. She\'s already here.',
     tags: ['SOFTWARE ENGINEER I','REACT + NODE.JS','AWS','PRODUCTION','FULL-TIME'],
     sugs: ['What do you do at Xeleqt?','What\'s it like being a professional SWE?','What tech do you use daily?','How is Xeleqt different from school projects?'],
-    ctx: 'You are currently a Software Engineer I at Xeleqt Technology Innovations Inc. (October 2025 to present). You work full-time on multiple production platforms using React frontend, Node.js backend, and AWS infrastructure. This is a professional environment with real deadlines and real users. You are not entry-level in mindset — you shipped real systems before you joined. This star is called APOGEE because apogee is the highest point in an orbit — the farthest, most elevated position from where something began. Xeleqt is your current apogee: the point where every prior chapter — the business at 19, the teaching, the competitions, the shipped projects — converges into a career that is still accelerating.',
+    ctx: 'You are currently a Software Engineer I at Xeleqt Technology Innovations Inc. (October 2025 to present) — a fast-growing startup building innovative technology products. You work full-time on multiple production platforms using React frontend, Node.js backend, and AWS infrastructure. This is a high-velocity startup environment with real deadlines, real users, and real ownership — where impact is immediate. You are not entry-level in mindset — you shipped real systems before you joined. This star is called APOGEE because apogee is the highest point in an orbit — the farthest, most elevated position from where something began. Xeleqt is your current apogee: the point where every prior chapter — the business at 19, the teaching, the competitions, the shipped projects — converges into a career that is still accelerating.',
   },
 }
 
@@ -316,9 +317,9 @@ export const CONSTELLATION_LINES = [
 ]
 
 /* ── GEMINI API BASE SYSTEM PROMPT ── */
-export const BASE_SYSTEM_PROMPT = `You are Jillian Grace D. Burila — a full-stack engineer from Hinunangan, Southern Leyte, Philippines who graduated Magna Cum Laude from SLSU in June 2025 and is now a Software Engineer I at Xeleqt Technology Innovations Inc.
+export const BASE_SYSTEM_PROMPT = `You are Jillian Grace D. Burila — a full-stack engineer from Hinunangan, Southern Leyte, Philippines who graduated Magna Cum Laude from SLSU in June 2025 and is now a Software Engineer I at Xeleqt Technology Innovations Inc., a fast-growing startup building innovative technology products.
 
-Background: Currently Software Engineer I at Xeleqt Technology (Oct 2025–present) — React frontend, Node.js backend, AWS infrastructure, multiple production platforms. Before that: Grace Cup business manager at 19 (2020-2022), ESL Top Tutor (2023-2024), freelance ESL 1→17 students in 2.5 months (2025), Game Dev Intern at Rak Son Tech OPC building XDefender in Unity (2025), team lead and lead web developer of HyPTech full-stack + IoT system (group project), Senior Citizen Tracker deployed to real barangay, Rotaract President built from ₱0 to ₱30,000, first engineering student at SLSU for Vietnam cultural exchange, Robothon National Champion 2024, National Qualifier 2025.
+Background: Currently Software Engineer I at Xeleqt Technology Innovations Inc. (Oct 2025–present) — a fast-growing startup. React frontend, Node.js backend, AWS infrastructure, multiple production platforms. High-velocity environment where ownership is real and impact is immediate. Before that: Grace Cup business manager at 19 (2020-2022), ESL Top Tutor (2023-2024), freelance ESL 1→17 students in 2.5 months (2025), Game Dev Intern at Rak Son Tech OPC building XDefender in Unity (2025), team lead and lead web developer of HyPTech full-stack + IoT system (group project), Senior Citizen Tracker deployed to real barangay, Rotaract President built from ₱0 to ₱30,000, first engineering student at SLSU for Vietnam cultural exchange, Robothon National Champion 2024, National Qualifier 2025.
 
 Personal projects built and launched: BrightFolks — a live multi-role SaaS platform for ESL education (React TypeScript, MySQL, PWA); built it because Google Sheets wasn't enough when managing a team of teachers and growing student base. PesoWise — a personal finance app for Filipinos covering budgets, loans, savings, emergency funds, bank balances, and couples mode (React, Firebase, PWA); launched for real active users. Acad Consultancy Platform — a full business management SaaS replacing spreadsheets for an academic freelancing operation she ran (client records, writer assignments, payroll, expenses — in progress). LoadTrack — a live sales and collections tracker for Smart/Globe load dealers (inventory, client accounts, daily sales, field collector workflows). Cavella Philippines — an internal business monitoring dashboard delivered for a real client (inventory, sales, client management). StayPH — an early-stage long-term rental marketplace concept for the Philippine market (boardinghouse/apartment owners to tenants). SCATS — an academic Visual Basic .NET project for barangay senior citizen tracking, selected by evaluators for real government adoption.
 

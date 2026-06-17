@@ -94,10 +94,11 @@ export default function RecruiterPersona({ onSwitch }) {
       { html: '> LOCATION: <span style="color:#e2e8f0">HINUNANGAN, SOUTHERN LEYTE, PH</span>', delay: 750 },
       { html: '> CURRENT ROLE: <span style="color:#f59e0b">SOFTWARE ENGINEER I · XELEQT TECHNOLOGY INNOVATIONS INC.</span>', delay: 1000 },
       { html: '> EXPERIENCE: <span style="color:#e2e8f0">1 YR+ PROFESSIONAL · INTERNSHIP · 3 PRIOR DEPLOYMENTS</span>', delay: 1300 },
-      { html: '> PRIMARY STACK: <span style="color:#22d3ee">React · Node.js · Django · MySQL · Python · Unity · C/C++</span>', delay: 1600 },
-      { html: '> ACADEMIC RANK: <span style="color:#f59e0b">MAGNA CUM LAUDE ★</span>', delay: 1900 },
-      { html: '> COMPETITION STATUS: <span style="color:#f59e0b">ROBOTHON NATIONAL CHAMPION 2024</span>', delay: 2150 },
-      { html: '> CANDIDATE STATUS: <span style="color:#4ade80">OPEN TO OPPORTUNITIES ✓</span>', delay: 2400 },
+      { html: '> WORK STACK (DAILY): <span style="color:#22d3ee">React · Node.js · AWS</span>', delay: 1600 },
+      { html: '> FULL STACK: <span style="color:#94a3b8">Django · MySQL · Python · Unity · C/C++</span>', delay: 1850 },
+      { html: '> ACADEMIC RANK: <span style="color:#f59e0b">MAGNA CUM LAUDE ★</span>', delay: 2100 },
+      { html: '> COMPETITION STATUS: <span style="color:#f59e0b">ROBOTHON NATIONAL CHAMPION 2024</span>', delay: 2350 },
+      { html: '> CANDIDATE STATUS: <span style="color:#4ade80">OPEN TO OPPORTUNITIES ✓</span>', delay: 2600 },
     ]
 
     function runBoot() {
