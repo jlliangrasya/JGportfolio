@@ -6,15 +6,72 @@
   justify-content: center;
   padding: 2rem;
   font-family: var(--mono);
+  position: relative;
+  overflow: hidden;
 }
 
+/* ── particles canvas ── */
+.entry-particles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── main content ── */
 .entry-content {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
 
+/* ── avatar ── */
+.entry-avatar-wrap {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  margin-bottom: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.entry-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+  border: 2px solid rgba(34, 211, 238, 0.35);
+}
+
+.entry-avatar-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid rgba(34, 211, 238, 0.55);
+  animation: ring-pulse 2.4s ease-in-out infinite;
+  z-index: 1;
+}
+
+.entry-avatar-ring--2 {
+  inset: -10px;
+  border-color: rgba(34, 211, 238, 0.2);
+  animation: ring-pulse 2.4s ease-in-out infinite 0.9s;
+}
+
+@keyframes ring-pulse {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50%       { opacity: 0.15; transform: scale(1.08); }
+}
+
+/* ── eyebrow ── */
 .entry-eyebrow {
   font-size: 10px;
   letter-spacing: 0.22em;
@@ -23,6 +80,35 @@
   margin-bottom: 1.3rem;
 }
 
+.entry-eyebrow--type {
+  opacity: 1;
+  min-height: 1.2em;
+}
+
+/* ── blinking cursor ── */
+.entry-cursor {
+  display: inline-block;
+  width: 1px;
+  height: 0.9em;
+  background: var(--cyan);
+  margin-left: 2px;
+  vertical-align: middle;
+  opacity: 1;
+  animation: cursor-blink 1s step-end infinite;
+}
+
+.entry-cursor--prompt {
+  height: 1em;
+  width: 8px;
+  margin-left: 4px;
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ── name ── */
 .entry-name {
   font-family: var(--disp);
   font-size: clamp(2.8rem, 7vw, 5rem);
@@ -35,6 +121,7 @@
 
 .entry-accent { color: var(--cyan); }
 
+/* ── roles ── */
 .entry-roles {
   font-size: 11px;
   letter-spacing: 0.18em;
@@ -42,6 +129,7 @@
   margin-bottom: 2.5rem;
 }
 
+/* ── prompt ── */
 .entry-prompt {
   font-size: 12px;
   color: var(--cyan);
@@ -50,6 +138,7 @@
   letter-spacing: 0.12em;
 }
 
+/* ── persona grid ── */
 .persona-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
