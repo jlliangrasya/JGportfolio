@@ -1,0 +1,23 @@
+<svg width="860" height="18" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0d1117" stop-opacity="0"/>
+      <stop offset="25%" stop-color="#22d3ee" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#f59e0b" stop-opacity="1"/>
+      <stop offset="75%" stop-color="#22d3ee" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0d1117" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <!-- Main line -->
+  <line x1="0" y1="9" x2="860" y2="9" stroke="url(#lineGrad)" stroke-width="1.5"/>
+  <!-- Center diamond -->
+  <polygon points="430,3 436,9 430,15 424,9" fill="#f59e0b" opacity="0.9">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+  </polygon>
+  <!-- Traveling dot -->
+  <circle r="2.5" fill="#22d3ee" opacity="0.9">
+    <animate attributeName="cx" values="0;860" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="9;9" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;1;0" dur="4s" repeatCount="indefinite"/>
+  </circle>
+</svg>

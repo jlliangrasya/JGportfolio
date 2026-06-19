@@ -351,8 +351,8 @@ function buildHTML(avatarSrc) {
   </div>
 
   <button id="bubble-btn" onclick="window._curiousToggleChat()">
+    <div class="bic-label">Chat with Jillian</div>
     <img class="bic-avatar" src="${avatarSrc}" alt="Chat with Jillian" />
-    <svg class="bic-close" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
     <div class="notif-ring"></div>
   </button>
 </div>`
@@ -486,16 +486,13 @@ const CURIOUS_CSS = `
 @keyframes sbtn-launch{0%{transform:scale(1)}40%{transform:scale(1.18) rotate(-10deg)}70%{transform:scale(.9) rotate(5deg)}100%{transform:scale(1) rotate(0deg)}}
 
 /* ── BUBBLE BUTTON ── */
-#bubble-btn{width:54px;height:54px;border-radius:50%;cursor:pointer;background:transparent;border:none;display:flex;align-items:center;justify-content:center;transition:transform .25s cubic-bezier(.22,1,.36,1);position:relative;flex-shrink:0;opacity:0;transform:translateY(10px) scale(.8)}
+#bubble-btn{width:54px;height:54px;border-radius:50%;cursor:pointer;background:transparent;border:none;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;transition:transform .25s cubic-bezier(.22,1,.36,1);position:relative;flex-shrink:0;opacity:0;transform:translateY(10px) scale(.8)}
 #bubble-btn.entered{opacity:1;transform:none;animation:bubble-bounce .6s cubic-bezier(.22,1,.36,1) both}
 @keyframes bubble-bounce{0%{transform:translateY(10px) scale(.8);opacity:0}60%{transform:translateY(-4px) scale(1.06)}80%{transform:translateY(2px) scale(.97)}100%{transform:none;opacity:1}}
 #bubble-btn:hover{transform:scale(1.1) !important}
+.bic-label{position:absolute;top:-26px;left:50%;transform:translateX(-50%);white-space:nowrap;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;color:#f1f5f9;background:rgba(6,10,18,.92);border:1px solid rgba(245,158,11,.35);border-radius:10px;padding:3px 9px;pointer-events:none}
 .bic-avatar{width:54px;height:54px;border-radius:50%;object-fit:cover;border:2.5px solid #f59e0b;display:block;transition:border-color .2s,box-shadow .2s;box-shadow:0 4px 18px rgba(0,0,0,.5)}
 #bubble-btn:hover .bic-avatar{border-color:#fbbf24;box-shadow:0 6px 24px rgba(245,158,11,.35)}
-.bic-close{display:none;width:22px;height:22px;fill:#05080f;position:absolute}
-#bubble-btn.chat-open .bic-avatar{display:none}
-#bubble-btn.chat-open .bic-close{display:block}
-#bubble-btn.chat-open{background:#f59e0b}
 .notif-ring{position:absolute;inset:-5px;border-radius:50%;border:2px solid #f59e0b;opacity:0;animation:cnotif 2s ease-in-out infinite;pointer-events:none}
 #bubble-btn.active .notif-ring{opacity:1}
 @keyframes cnotif{0%,100%{transform:scale(1);opacity:.55}50%{transform:scale(1.22);opacity:0}}
