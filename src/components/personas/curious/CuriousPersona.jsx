@@ -365,7 +365,7 @@ const CURIOUS_CSS = `
 #const-svg{position:fixed;inset:0;z-index:1;pointer-events:none}
 .cline{stroke:rgba(255,255,255,.08);stroke-width:.8;stroke-dasharray:4 6;opacity:0;transition:opacity .5s}
 .cline.drawn{opacity:1}.cline.lit{stroke-width:1.4;opacity:.28;transition:all .3s}
-.cstar{position:fixed;z-index:3;border-radius:50%;cursor:pointer;transform:translate(-50%,-50%);transition:transform .35s cubic-bezier(.22,1,.36,1),filter .25s,opacity .45s;will-change:transform;animation:startwinkle var(--tw-dur,4s) ease-in-out var(--tw-delay,0s) infinite}
+.cstar{position:fixed;z-index:6;border-radius:50%;cursor:pointer;transform:translate(-50%,-50%);transition:transform .35s cubic-bezier(.22,1,.36,1),filter .25s,opacity .45s;will-change:transform;animation:startwinkle var(--tw-dur,4s) ease-in-out var(--tw-delay,0s) infinite}
 @keyframes startwinkle{0%,100%{opacity:1;filter:brightness(1)}45%{opacity:.65;filter:brightness(.7)}55%{opacity:.9;filter:brightness(1.25)}}
 .cstar:hover{filter:brightness(1.5) !important;animation:none}
 .cstar.dimmed{opacity:.1;pointer-events:none;filter:none;animation:none}
@@ -493,12 +493,15 @@ const CURIOUS_CSS = `
 .bic-label{position:absolute;top:-26px;left:50%;transform:translateX(-50%);white-space:nowrap;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;color:#f1f5f9;background:rgba(6,10,18,.92);border:1px solid rgba(245,158,11,.35);border-radius:10px;padding:3px 9px;pointer-events:none}
 .bic-avatar{width:54px;height:54px;border-radius:50%;object-fit:cover;border:2.5px solid #f59e0b;display:block;transition:border-color .2s,box-shadow .2s;box-shadow:0 4px 18px rgba(0,0,0,.5)}
 #bubble-btn:hover .bic-avatar{border-color:#fbbf24;box-shadow:0 6px 24px rgba(245,158,11,.35)}
+#bubble-btn.chat-open .bic-avatar{display:none}
+#bubble-btn.chat-open .bic-label{display:none}
 .notif-ring{position:absolute;inset:-5px;border-radius:50%;border:2px solid #f59e0b;opacity:0;animation:cnotif 2s ease-in-out infinite;pointer-events:none}
 #bubble-btn.active .notif-ring{opacity:1}
 @keyframes cnotif{0%,100%{transform:scale(1);opacity:.55}50%{transform:scale(1.22);opacity:0}}
 .cno-star{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:#64748b;text-align:center;padding:1.5rem 1rem;line-height:1.7;letter-spacing:.06em}
 
 @media(max-width:768px){
+  .cstar{min-width:32px;min-height:32px}
   #ctopbar{padding:.6rem 1rem}
   .ctb-l{font-size:8.5px;letter-spacing:.1em}
   .ctb-r{font-size:8px}

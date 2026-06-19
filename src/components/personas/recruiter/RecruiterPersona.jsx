@@ -708,8 +708,9 @@ const RPG_CSS = `
   .rpg-tb-id{display:none}
   #rpg-hintbar{font-size:8.5px;padding:.3rem .8rem}
   #rpg-vp{top:70px;bottom:48px}
-  .rpg-screen{padding:.8rem .7rem}
-  .rpg-s1-layout{grid-template-columns:1fr !important;gap:10px;max-width:100%;overflow-y:auto;max-height:100%;padding-bottom:1rem}
+  .rpg-screen{padding:.8rem .7rem;overflow-y:auto;align-items:flex-start;justify-content:flex-start}
+  .rpg-screen > div{width:100%;max-width:100% !important}
+  .rpg-s1-layout{grid-template-columns:1fr !important;gap:10px;max-width:100%;padding-bottom:1rem}
   #statPanel{width:100%;position:fixed;top:auto;bottom:0;left:0;right:0;height:55vh;transform:translateY(100%);border-left:none;border-top:1px solid rgba(245,158,11,.28)}
   #statPanel.open{transform:translateY(0)}
   #branches{grid-template-columns:repeat(2,1fr) !important;gap:8px}
@@ -722,6 +723,7 @@ const RPG_CSS = `
   .rpg-nav-btn{padding:5px 12px;font-size:10px}
   .rpg-role-selector{gap:4px}
   .rpg-role-opt{font-size:9px;padding:4px 8px}
+  #s5{justify-content:flex-start;padding-top:1.5rem}
 }
 @media(max-width:480px){
   #rpg-topbar{padding:.4rem .7rem}
